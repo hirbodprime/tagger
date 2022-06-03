@@ -2,8 +2,8 @@ from pyrogram import Client, filters , emoji
 
 app = Client(
     "tag",
-    api_id=1723719,
-    api_hash="dce2a0e1a8376fec526b76bb99746238"
+    api_id = 1111111
+    api_hash = ""
 )
 
 
@@ -13,11 +13,11 @@ def tag(c, m):
     global tag_on
     tag_on = True
 
-    for user in app.iter_chat_members(m.chat.id, int(m.command[1]) if len(m.command) >= 2 else None):
+    for user in app.get_chat_members(m.chat.id, int(m.command[1]) if len(m.command) >= 2 else None):
         # sleep(1)
         if user.user.is_bot == False and user.user.is_deleted == False and not user.user.first_name == None:
             if tag_on:
-                app.send_message(m.chat.id, f"{user.user.mention} {emoji.SPARKLES} بیاید ویس کال برای جمع بندی پازلا")
+                app.send_message(m.chat.id, f"{user.user.mention} {emoji.SPARKLES}")
             else:
                 exit()
 
