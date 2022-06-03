@@ -1,9 +1,7 @@
 from pyrogram import Client, filters , emoji
 
 app = Client(
-    "tag",
-    api_id = 1111111
-    api_hash = ""
+    "tag"
 )
 
 
